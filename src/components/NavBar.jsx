@@ -1,11 +1,12 @@
-import CardWidget from "../CardWidget/CardWidget";
+import { Link } from "react-router-dom";
+import CardWidget from "./CardWidget";
 
 const NavBar = (props) => {
     return (
         <header>
             <div className="nav-top">
                 <div className="logo-nombre">
-                    <a href=""><img src="./src/img/icon.png" className="logo" alt="logo" /></a>
+                    <Link to="/"><img src="/public/icon.png" className="logo" alt="logo" /></Link>
                     <h4>MCompu</h4>
                 </div>
                 <div className="search">
@@ -25,11 +26,11 @@ const NavBar = (props) => {
                         <i className='bx bx-chevron-down bx-xs'></i>
                     </button>
                     <ul>
-                        <li><a href="#">Marcas<i className='bx bx-chevron-down'></i></a></li>
-                        <li><a href="#">Ofertas</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Mis pedidos</a></li>
-                        <li><a href="#">Arma tu Pc</a></li>
+                        <li><Link to={"/"}>Marcas<i className='bx bx-chevron-down'></i></Link></li>
+                        <li><Link to={"/"}>Ofertas</Link></li>
+                        <li><Link to={"/"}>Contacto</Link></li>
+                        <li><Link to={"/"}>Mis pedidos</Link></li>
+                        <li><Link to={"/"}>Arma tu Pc</Link></li>
                     </ul>
                 </div>
                 <CardWidget cartCount={props.cartCount} />
