@@ -7,7 +7,7 @@ body{
 }
 
 #root{
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(222, 222, 222);
 }
 
 header{
@@ -584,25 +584,20 @@ hr{
     padding-left: 10px;
 }
 
-.contenidoCarrito{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    height: calc(100% - 50px);
-    box-sizing: border-box;
-}
 
-#carritoVacio{
+
+.carritoVacio{
+    padding: 20px;
+    height: 100%;
     align-self: center;
 }
 
-#carritoVacio p{
+.carritoVacio p{
     margin: 0;
     text-align: center;
 }
 
-#carritoVacio img{
+.carritoVacio img{
     height: 300px;
     width: 350px
 }
@@ -621,6 +616,7 @@ hr{
     border: solid 1px  rgb(3, 3, 3, 0.2);
     padding: 6px 10px;
     font-size: 0.8rem;
+    margin-right: 10px;
     /* border-radius: 20px; */
 }
 
@@ -640,6 +636,7 @@ hr{
     align-items: center;
     padding: 5px;
     bottom: 0;
+    height: 50px;
     width: 100%;
     background-color: #222;
     color: white;
@@ -747,8 +744,9 @@ hr{
     background-color: white;
     color: black;
     width: 250px;
-    border: 1px solid rgb(0, 0, 0, 0.5);
     margin-top: 65px;
+    box-shadow: 0px 4px 12px rgb(3, 3, 3, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .contenedorFiltros h4{
@@ -820,10 +818,11 @@ hr{
 
 .contenedorDatos{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 115px);
-    padding: 20px 100px 10px 0px;
+    min-height: calc(100vh - 171px);
+    height: 600px;
+
 }
 
 .formulario-datos, .formulario-pago, .formulario-confirmacion{
@@ -968,6 +967,7 @@ hr{
     align-items: center;
     justify-content: center;
     height: calc(100vh - 171px);
+    height: 600px;
 }
 
 .detail{
@@ -994,8 +994,12 @@ hr{
     column-gap: 20px;
     position: relative;
     background-color: white;
+    width: 900px;
 }
 
+.infoDetail{
+    width: 650px;
+}
 
 .imgDetail{
     height: 200px;
@@ -1014,9 +1018,10 @@ hr{
     background-color: black;
     cursor: pointer;
     column-gap: 5px;
-    position: absolute;
+    text-decoration: none;
+    /* position: absolute;
     bottom: 10px;
-    right: 10px;
+    right: 10px; */
 }
 
 .productInfo{
@@ -1062,3 +1067,98 @@ hr{
     bottom: 10px;
     right: 10px;
 }
+
+.item-count{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100px;
+}
+
+.item-count button{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+.item-count p{
+    margin: 0;
+    padding: 15px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.contenedor-botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5px;
+    column-gap: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.contenedorCarrito{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 171px);
+    height: 600px;
+}
+
+.carrito{
+    height: 500px;
+    box-shadow: 0px 4px 12px rgb(3, 3, 3, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
+.contenidoCarrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: calc(100vh - 100px);
+    height: 500px;
+    overflow: auto;
+}
+
+.contenedor-pedido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 171px);
+}
+
+.contenido-pedido{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: 200px;
+    box-shadow: 0px 4px 12px rgb(3, 3, 3, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.contenido-pedido p{
+    font-size: 1.2rem;
+}
+

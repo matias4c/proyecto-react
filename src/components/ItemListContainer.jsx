@@ -1,23 +1,34 @@
 import { useEffect, useState } from "react";
-import { pedirItem, pedirItemPorCategoria } from "../pedirDatos";
 import ItemList from "./ItemList";
 import { Link, useParams } from "react-router-dom";
 import { toCapital } from "../toCapital"
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../services/firebase";
+
 
 const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([]);
-  const {categoria} = useParams();
   const [titulo, setTitulo] = useState("Todos los productos");
 
+  const categoria = useParams().categoria;
+
   useEffect(() => {
-      if(!categoria){
-        pedirItem()
-          .then((res) => { setProductos(res); setTitulo("Todos los productos"); })
-      } else {
-        pedirItemPorCategoria(categoria)
-          .then((res) => { setProductos(res); setTitulo(categoria); })
-      }
+
+    const productosRef = collection(db, "productos");
+
+    const q = categoria ? query(productosRef, where("categoria", "==", categoria)) : productosRef;
+
+
+    getDocs(q)
+      .then((resp) => {
+        setProductos(
+          resp.docs.map((doc) => {
+            return { ...doc.data(), id: doc.id }
+          })
+        );
+      })
+
   }, [categoria])
 
   return (
